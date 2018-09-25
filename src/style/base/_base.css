@@ -1,0 +1,67 @@
+html,
+body,
+body > div,
+body .layout,
+.ivu-layout {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+dl,
+li,
+dt,
+dd {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", FontAwesome, sans-serif;
+}
+html,
+body {
+  background-color: #f6f6f6;
+}
+a {
+  text-decoration: none;
+  color: #222;
+}
+a:hover {
+  color: #2d8cf0;
+}
+img,
+input {
+  border: 0 none;
+  padding: 0;
+  margin: 0;
+  vertical-align: middle;
+  outline-style: none;
+}
+/* 清除浮动 */
+.nofiy:after {
+  content: "";
+  height: 0;
+  line-height: 0;
+  display: block;
+  clear: both;
+  visibility: hidden;
+}
+.nofiy {
+  zoom: 1;
+}
+.card {
+  margin: 10px 20px;
+  padding: 5px 20px;
+  border-left: 4px solid #8bb4e7;
+  background-color: #f5f8fd;
+  font-size: 16px;
+  color: #010407;
+}
