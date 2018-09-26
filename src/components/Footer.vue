@@ -3,11 +3,11 @@
         <div class="left">
             <label>
                 <Icon type="md-information-circle" />
-                全部订单 {{sum}}
+                今日订单 {{sum}}
             </label>
             <label>
                 <Icon type="md-warning" />
-                今日未完成订单 {{warning}}
+                未完成订单 {{warning}}
             </label>
             <label>
                 <Icon type="md-close-circle" />
@@ -24,6 +24,9 @@
             </label>
             <label>
                 系统时间 {{dateset}}
+            </label>
+            <label>
+                <Icon class="logo" type="logo-freebsd-devil" />
             </label>
         </div>
     </div>
