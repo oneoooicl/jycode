@@ -9,7 +9,6 @@
         <div v-for="(item, key) in list" :key="key" @click="onShowItem(key)">
             <Icon :type="item.icon" />
             <p>{{item.name}}</p>
-            <label>{{itemindex}}</label>
             <myNavItem v-if="item.active" :dataset="item.items"></myNavItem>
         </div>
         <div class="info">
@@ -69,7 +68,7 @@ export default {
                     {name:"公司简介", icon:"md-browsers", url:"" },
                     {name:"宣传活动", icon:"md-bowtie", url:"" },
                 ]},
-            ]
+            ],
         }
     },
     methods:{

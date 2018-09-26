@@ -12,16 +12,20 @@
               <router-view/>
             </Content>
         </Layout>
+        <Footer>
+          <myFooter></myFooter>
+        </Footer>
     </Layout>
   </div>
 </template>
 
 <script>
 import myHeader from '@/components/Header.vue';
+import myFooter from '@/components/Footer.vue';
 import myNav from '@/components/Nav.vue';
 
 export default {
-  components: {myHeader, myNav},
+  components: {myHeader, myFooter, myNav},
   name: 'App'
 }
 </script>
