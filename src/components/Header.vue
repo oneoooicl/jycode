@@ -1,13 +1,20 @@
 <template>
     <div class="header">
-        <!-- <div class="logo">LOGO</div>
-        <div class="search">
-            <Icon type="md-search" />
-            <input type="text" placeholder="快速查询订单">
+        <div class="header_left">
+            <Icon type="ios-bonfire" />
+            LOGO
         </div>
-        <div class="user">
 
-        </div> -->
+        <div class="header_right">
+            <div class="search">
+                <Icon type="md-search" />
+                <input type="text" placeholder="快速查找订单ID/厂家名/客户名">
+            </div>
+            <div>
+                <Icon type="md-log-out" />
+                登出
+            </div>
+        </div>
     </div>
 </template>
 

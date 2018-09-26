@@ -1,16 +1,14 @@
 <template>
   <div id="app">    
     <Layout>
-        <Header>
-          <myHeader></myHeader>
-        </Header>
         <Layout>
-            <Sider hide-trigger width="55px">
-              <myNav></myNav>
-            </Sider>
-            <Content>
-              <router-view/>
-            </Content>
+          <Sider hide-trigger width="55px">
+            <myNav></myNav>
+          </Sider>
+          <Content>
+            <myHeader></myHeader>
+            <router-view/>
+          </Content>
         </Layout>
         <Footer>
           <myFooter></myFooter>
