@@ -1,12 +1,18 @@
 <template>
   <div id="app">    
-    <!-- <myHeader></myHeader> -->
-    <div class="nav">
-      <myNav></myNav>
-    </div>
-    <div class="content">
-      <router-view/>
-    </div>
+    <Layout>
+        <Header>
+          <myHeader></myHeader>
+        </Header>
+        <Layout>
+            <Sider hide-trigger width="55px">
+              <myNav></myNav>
+            </Sider>
+            <Content>
+              <router-view/>
+            </Content>
+        </Layout>
+    </Layout>
   </div>
 </template>
 

@@ -1,6 +1,64 @@
 .nav{
-    display: block;
     width: 55px;
     height: 100%;
     background-color: #333;
+    padding: 10px 0;
+    position: relative;
+    z-index: 99;
+}
+
+.nav > div{
+    width: 55px;
+    height: 55px;
+    cursor: pointer;
+    position: relative;
+}
+
+.nav > div:hover .ivu-icon, .nav > div p{
+    color: #fff;
+}
+
+.nav > div .ivu-icon{
+    color: #adadad;
+    font-size: 25px;
+    display: block;
+    text-align: center;
+}
+.nav > div p{
+    font-size: 10px;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.2s linear;
+}
+
+.nav > div:hover p{
+    opacity: 1;
+}
+
+.setting, .info{
+    width: 55px;
+    height: 55px;
+    position: absolute !important;
+}
+
+.setting{
+    bottom: 5px;
+}
+
+.info{
+    bottom: 60px;
+}
+
+.info .sub{
+    display: block;
+    width: 15px;
+    height: 15px;
+    line-height: 15px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #007acc;
+    color: #fff;
+    position: absolute;
+    bottom: 30px;
+    right: 12px;
 }
