@@ -17,6 +17,7 @@
         <!-- Grid -->
         <div class="Grid">
             <Table border @on-selection-change="check" size="small" ref="selection" :columns="col" :data="dataset"></Table>
+            <Page :total="total" :current="current" :page-size="pageSize" show-total show-elevator />
         </div>
     </div>
 </template>
@@ -25,6 +26,11 @@
 export default {
     data(){
         return {
+            // page
+            total: 100,     // 总条数
+            current: 1,     // 当前页
+            pageSize:20,    // 每页数量
+
             col: [      // 列值
                 {
                     type: 'selection',
