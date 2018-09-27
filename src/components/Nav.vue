@@ -49,10 +49,11 @@ export default {
                     {name:"类别管理", icon:"logo-buffer", url:"" },
                     {name:"单位管理", icon:"logo-buffer", url:"" },
                 ]},
-                {name:"订单", active:false, icon:"ios-clipboard", items:[
+                {name:"订单/收支", active:false, icon:"ios-clipboard", items:[
                     {name:"未完成订单", icon:"md-bicycle", url:"" },
-                    {name:"销售", icon:"md-arrow-round-up", url:"" },
-                    {name:"进货", icon:"md-arrow-round-down", url:"" },
+                    {name:"销售-发起订单", icon:"md-arrow-round-up", url:"" },
+                    {name:"进货-发起订单", icon:"md-arrow-round-down", url:"" },
+                    {name:"杂项支出", icon:"md-cart", url:"" },
                 ]},
                 {name:"账务统计", active:false, icon:"ios-book", items:[
                     {name:"全部账单", icon:"ios-paper", url:"" },

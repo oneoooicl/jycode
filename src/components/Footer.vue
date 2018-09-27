@@ -25,15 +25,18 @@
             <label>
                 系统时间 {{dateset}}
             </label>
-            <label>
+            <label @click="openFeeback()">
                 <Icon class="logo" type="logo-freebsd-devil" />
+                <myFeedback v-if="feedback" @closeFeedback="closeFeedback()"></myFeedback>
             </label>
         </div>
     </div>
 </template>
 
 <script>
+import myFeedback from './Feedback.vue';
 export default {
+    components: {myFeedback},
     data(){
         return {
             error: 10,
@@ -41,7 +44,18 @@ export default {
             sum: 22,
             username: "admin",
             usertype: 1,
-            dateset: "2018-9-26"
+            dateset: "2018-9-26",
+
+            feedback:false
+        }
+    },
+    methods:{
+        openFeeback:function(){
+            this.feedback = this.feedback == true ? false : true;
+        },
+
+        closeFeedback:function(){
+            this.feedback = false;
         }
     }
 }

@@ -29,7 +29,7 @@ export default {
             // page
             total: 100,     // 总条数
             current: 1,     // 当前页
-            pageSize:20,    // 每页数量
+            pageSize: 20,   // 每页数量
 
             col: [      // 列值
                 {
