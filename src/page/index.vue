@@ -1,7 +1,7 @@
 <template>
 
-    <div class="index">
-        456
+    <div class="index form">
+        Index.vue
     </div>
     
 </template>

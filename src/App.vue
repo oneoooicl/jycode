@@ -3,11 +3,11 @@
     <Layout>
         <Layout>
           <Sider hide-trigger width="55px">
-            <myNav></myNav>
+            <myNav @toTab="toTab"></myNav>
           </Sider>
           <Content>
             <myHeader></myHeader>
-            <router-view/>
+            <myTab :list="list"></myTab>
           </Content>
         </Layout>
         <Footer>
@@ -21,10 +21,21 @@
 import myHeader from '@/components/Header.vue';
 import myFooter from '@/components/Footer.vue';
 import myNav from '@/components/Nav.vue';
+import myTab from '@/components/Tab.vue';
 
 export default {
-  components: {myHeader, myFooter, myNav},
-  name: 'App'
+  components: {myHeader, myFooter, myNav, myTab},
+  name: 'App',
+  data () {
+        return {
+            list:[],
+        }
+    },
+    methods: {
+        toTab:function(e){
+          this.list = e;
+        }
+    },
 }
 </script>
 

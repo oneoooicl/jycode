@@ -1,15 +1,13 @@
 <template>
     <div class="nav">
-        <div>
-            <router-link to="/">
-                <Icon type="md-bulb" />
-                <p>开始页</p>
-            </router-link>
+        <div v-for="homeitem in home" :key="homeitem.url" @click="toTab(homeitem)">
+            <Icon :type="homeitem.icon" />
+            <p>{{homeitem.name}}</p>
         </div>
         <div v-for="(item, key) in list" :key="key" @click="onShowItem(key)">
             <Icon :type="item.icon" />
             <p>{{item.name}}</p>
-            <myNavItem v-if="item.active" :dataset="item.items"></myNavItem>
+            <myNavItem v-if="item.active" :dataset="item.items" @toTab="toTab"></myNavItem>
         </div>
         <div class="info">
             <Icon type="md-chatbubbles" />
@@ -30,11 +28,14 @@ export default {
     data(){
         return {
             itemindex: null,
+            home:[
+                {name:"开始页", icon:"md-bulb", url:"index" }
+            ],
             list: [
                 {name:"客户库", active:false, icon:"md-contacts", items:[
-                    {name:"客户列表", icon:"md-list", url:"" },
-                    {name:"添加客户", icon:"md-add", url:"" },
-                    {name:"客户回收站", icon:"md-trash", url:"" },
+                    {name:"客户列表", icon:"md-list", url:"customerIndex" },
+                    {name:"添加客户", icon:"md-add", url:"customerAdd" },
+                    {name:"客户回收站", icon:"md-trash", url:"customerRecycle" },
                 ]},
                 {name:"厂家库", active:false, icon:"md-plane", items:[
                     {name:"厂家列表", icon:"md-list", url:"" },
@@ -81,8 +82,14 @@ export default {
                 }
                 this.list[e].active = true;
             }
+        },
+        toTab:function(e){
+            this.$emit('toTab', e);
         }
-    }
+    },
+    created:function(){
+        this.toTab(this.home[0]);
+    },
 }
 </script>
 

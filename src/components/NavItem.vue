@@ -1,10 +1,8 @@
 <template>
     <div class="navitem" @load="show($event)">
-        <div v-for="(items, key) in dataset" :key="key" @click="onclick">
-            <router-link :to="items.url">
-                <Icon :type="items.icon" />
-                <label>{{items.name}}</label>
-            </router-link>  
+        <div v-for="(items, key) in dataset" :key="key" @click="onTab(items);onclick">
+            <Icon :type="items.icon" />
+            <label>{{items.name}}</label>
         </div>
     </div>
 </template>
@@ -22,10 +20,17 @@ export default {
             
         },
 
+        // 冒泡
         onclick:function(event){
             event.stopPropagation();
+        },
+
+        // on Tab
+        onTab:function(e){
+            e.timestamp = new Date().getTime();
+            this.$emit('toTab', e);
         }
-    }
+    },
 }
 </script>
 
