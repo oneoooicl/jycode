@@ -25,9 +25,9 @@
             <label>
                 系统时间 {{dateset}}
             </label>
-            <label @click="openFeeback()">
+            <label @click.stop="openFeeback()">
                 <Icon class="logo" type="logo-freebsd-devil" />
-                <myFeedback v-if="feedback" @closeFeedback="closeFeedback()"></myFeedback>
+                <myFeedback :Light="Light" v-if="feedback" @closeFeedback="closeFeedback()"></myFeedback>
             </label>
         </div>
     </div>
@@ -37,6 +37,7 @@
 import myFeedback from './Feedback.vue';
 export default {
     components: {myFeedback},
+    props: ["Light"],
     data(){
         return {
             error: 10,
@@ -51,7 +52,7 @@ export default {
     },
     methods:{
         openFeeback:function(){
-            this.feedback = this.feedback == true ? false : true;
+            this.feedback = true;
         },
 
         closeFeedback:function(){

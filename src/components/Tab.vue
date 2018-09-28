@@ -2,7 +2,7 @@
     <div class="tab">
         <Tabs type="card" closable @on-tab-remove="handleTabRemove" :value="index" :before-remove="beforeRemove">
             <TabPane v-for="(items, key) in dataset" :key="key" :label="items.name" :icon="items.icon" :name="items.url">
-                <router-view :name="items.url"></router-view>
+                <router-view :name="items.url" @winData="winData"></router-view>
             </TabPane>
         </Tabs>
     </div>
@@ -38,6 +38,11 @@ export default {
 
         showTab:function(){
             console.log("show");
+        },
+
+        // 传输data
+        winData:function(e){
+            this.$emit("winData",e);
         }
     },
     watch:{

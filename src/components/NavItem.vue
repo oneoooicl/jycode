@@ -1,5 +1,5 @@
 <template>
-    <div class="navitem" @load="show($event)">
+    <div class="navitem" @load="show($event)" :class="Light?'light':''">
         <div v-for="(items, key) in dataset" :key="key" @click="onTab(items);onclick">
             <Icon :type="items.icon" />
             <label>{{items.name}}</label>
@@ -9,7 +9,7 @@
 
 <script>
 export default {
-    props: ["dataset"],
+    props: ["dataset", "Light"],
     data(){
         return {
 

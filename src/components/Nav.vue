@@ -7,9 +7,9 @@
         <div v-for="(item, key) in list" :key="key" @click="onShowItem(key)">
             <Icon :type="item.icon" />
             <p>{{item.name}}</p>
-            <myNavItem v-if="item.active" :dataset="item.items" @toTab="toTab"></myNavItem>
+            <myNavItem v-if="item.active" :dataset="item.items" @toTab="toTab" :Light="Light"></myNavItem>
         </div>
-        <div class="info">
+        <div class="info" @click="showFirstInfo">
             <Icon type="md-chatbubbles" />
             <sub class="sub">5</sub>
             <p>消息</p>
@@ -25,6 +25,7 @@
 import myNavItem from './NavItem.vue';
 export default {
     components: {myNavItem},
+    props: ["Light"],
     data(){
         return {
             itemindex: null,
@@ -86,6 +87,11 @@ export default {
         },
         toTab:function(e){
             this.$emit('toTab', e);
+        },
+
+        // 显示前台消息
+        showFirstInfo:function(e){
+            this.$emit('showFirstInfo');
         }
     },
     created:function(){

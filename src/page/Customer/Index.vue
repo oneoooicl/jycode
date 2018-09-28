@@ -58,9 +58,9 @@ export default {
                     key: 'address'
                 },
                 {
-                        title: '编辑 修改政策 停业',
+                        title: '编辑 修改政策 停业 对比',
                         key: 'action',
-                        width: 150,
+                        width: 170,
                         align: 'center',
                         render: (h, params) => {
                             return h('div', [
@@ -99,6 +99,7 @@ export default {
                                         type: 'md-trash'
                                     },
                                     style: {
+                                        marginRight: '8px',
                                         cursor: "pointer",
                                         fontSize: "18px"
                                     },
@@ -107,7 +108,21 @@ export default {
                                             // this.remove(params.index)
                                         }
                                     }
-                                })
+                                }),
+                                h('Icon', {
+                                    props: {
+                                        type: 'md-git-branch'
+                                    },
+                                    style: {
+                                        cursor: "pointer",
+                                        fontSize: "18px"
+                                    },
+                                    on: {
+                                        click: () => {
+                                            this.$emit("winData", params.row);
+                                        }
+                                    }
+                                }),
                             ]);
                         }
                     }

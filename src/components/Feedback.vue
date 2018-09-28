@@ -1,6 +1,9 @@
 <template>
-    <div class="feedback">
-        <Icon type="md-close" @click="close" />
+    <div class="feedback" :class="!Light ? 'dark' : ''">
+        <span @click.stop="close">
+            <Icon type="md-close" />
+        </span>
+        
         <div>
             <Icon type="logo-freebsd-devil" />
             <h2>意见反馈</h2>
@@ -15,6 +18,7 @@
 
 <script>
 export default {
+    props: ["Light"],
     data() {
         return {
             
@@ -44,11 +48,20 @@ export default {
         padding: 20px 30px;
     }
 
+    .feedback.dark{
+        background-color: #333;
+        box-shadow: 0 0 10px #666;
+    }
+
     .feedback .ivu-icon{
         font-size: 50px;
-        color: #808080;
+        color: #a7a7a7;
         transform: rotateY(180deg);
         float: left;
+    }
+
+    .feedback.dark .ivu-icon{
+        color: #ddd;
     }
 
     .feedback h2, .feedback p {
@@ -57,6 +70,11 @@ export default {
         line-height: 25px;
         margin-left: 20px;
     }
+
+    .feedback.dark h2, .feedback.dark p{
+        color: #ddd;
+    }
+
     .feedback p{
         display: block;
         font-size: 12px;
@@ -73,11 +91,21 @@ export default {
         right: 10px;
         font-size: 18px;
     }
+
+    .feedback.dark .ivu-btn-primary{
+        background-color: #535353;
+        border: none 0;
+    }    
 </style>
 <style>
     .feedback .ivu-input{
         margin-top: 10px;
         border-radius: 0px;
         font-size: 12px;
+    }
+    .feedback.dark .ivu-input{
+        background-color: #454545;
+        border: 1px solid #666;
+        color: #fff;
     }
 </style>
