@@ -34,7 +34,7 @@ export default {
   name: 'App',
   data () {
         return {
-          light: true,
+          light: false,
           list: [],
 
           windows:[
