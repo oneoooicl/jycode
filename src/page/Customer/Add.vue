@@ -1,7 +1,21 @@
 <template>
     <div class="customerAdd form">
+        <Alert show-icon>
+            提示
+            <Icon type="ios-bulb-outline" slot="icon"></Icon>
+            <template slot="desc">
+                快捷键<Tag class='tag' color="cyan">Tab</Tag>键 可以在行内切换输入框<br />
+                快捷键<Tag class='tag' color="cyan">Enter</Tag>键 在最后一行输入时可快速添加一行
+            </template>
+        </Alert>
         <Table border size="small" ref="selection" :columns="col" :data="dataset"></Table>
         <Button type="primary" size="small" icon="md-add" @click="addrow">添加一行数据</Button>
+        <div class="customerAdd_submit">
+            <Alert type="success" class="nofiy" style="line-height:30px;">
+                将以批量添加模式添加到您的数据。请确定数据完整性。
+                <Button class="submit" type="primary">完成</Button>
+            </Alert>
+        </div>
     </div>
 </template>
 
@@ -183,5 +197,17 @@ export default {
     }
     .form .ivu-btn{
         outline:none;
+    }
+
+    .customerAdd_submit{
+        margin-top: 20px;
+    }
+
+    .customerAdd_submit .submit{
+        float: right;
+    }
+
+    .tag{
+        margin: 0 10px;
     }
 </style>
