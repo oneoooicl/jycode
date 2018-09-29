@@ -30,7 +30,7 @@ export default {
         return {
             itemindex: null,
             home:[
-                {name:"开始页", icon:"md-bulb", url:"index" }
+                {name:"开始页", icon:"md-bulb", url:"home" }
             ],
             list: [
                 {name:"客户库", active:false, icon:"md-contacts", items:[

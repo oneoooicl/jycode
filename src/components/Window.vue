@@ -79,6 +79,8 @@ export default {
         },
     },
     created:function(){
+        this.top = this.top + (this.Keys*5);
+        this.left = this.left + (this.Keys*10);
         window.addEventListener('mouseup', this.moveStop);
         window.addEventListener('mousemove', this.moveIn);
     }

@@ -4,12 +4,18 @@
         <!-- ButtonGroup -->
         <div class="buttonGroup">
             <div class="btng_left">
+                <Select v-model="searchVal" style="width:90px;margin-right:-5px;border:0 none;">
+                    <Option v-for="(item, key) in searchList" :value="key" :key="key">{{ item }}</Option>
+                </Select>
                 <Input placeholder="请输入客户名" style="width: auto" />
                 <Button type="primary" class="search"><Icon type="md-search" />搜索</Button>
                 <Button type="success"><Icon type="md-add" />添加</Button>
                 <Button type="error"><Icon type="md-trash" />批量停止营业</Button>
             </div>
             <div class="btng_right">
+                <Select v-model="selectVal" style="width:150px">
+                    <Option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</Option>
+                </Select>
                 <Button class="excel" type="success" @click="exportData()"><Icon type="md-grid" />导出至EXCLE</Button>
             </div>
         </div>
@@ -30,6 +36,19 @@ export default {
             total: 100,     // 总条数
             current: 1,     // 当前页
             pageSize: 20,   // 每页数量
+
+            searchVal:0,
+            selectVal:0,
+            searchList:[
+                "客户名", "电话" ,"备用电话", "邮箱", "地址"
+            ],
+            cityList:[  // 排序
+                { value: 0, label:"默认排序"},
+                { value: 1, label:"按客户名称从低到高"},
+                { value: 2, label:"按客户名称从高到低"},
+                { value: 3, label:"按地址从低到高"},
+                { value: 4, label:"按地址从高到低"}
+            ],
 
             col: [      // 列值
                 {
@@ -128,21 +147,21 @@ export default {
                     }
             ],
             dataset:[       // 数据
-                {name: "金源纸业", tel:"1310*******", standby:"159********", email:"jy@163.com", address:"保定市*************"},
-                {name: "金源纸业", tel:"1310*******", standby:"159********", email:"jy@163.com", address:"保定市*************"},
-                {name: "金源纸业", tel:"1310*******", standby:"159********", email:"jy@163.com", address:"保定市*************"},
-                {name: "金源纸业", tel:"1310*******", standby:"159********", email:"jy@163.com", address:"保定市*************"},
-                {name: "金源纸业", tel:"1310*******", standby:"159********", email:"jy@163.com", address:"保定市*************"},
-                {name: "金源纸业", tel:"1310*******", standby:"159********", email:"jy@163.com", address:"保定市*************"},
-                {name: "金源纸业", tel:"1310*******", standby:"159********", email:"jy@163.com", address:"保定市*************"},
-                {name: "金源纸业", tel:"1310*******", standby:"159********", email:"jy@163.com", address:"保定市*************"},
-                {name: "金源纸业", tel:"1310*******", standby:"159********", email:"jy@163.com", address:"保定市*************"},
-                {name: "金源纸业", tel:"1310*******", standby:"159********", email:"jy@163.com", address:"保定市*************"},
-                {name: "金源纸业", tel:"1310*******", standby:"159********", email:"jy@163.com", address:"保定市*************"},
-                {name: "金源纸业", tel:"1310*******", standby:"159********", email:"jy@163.com", address:"保定市*************"},
-                {name: "金源纸业", tel:"1310*******", standby:"159********", email:"jy@163.com", address:"保定市*************"},
-                {name: "金源纸业", tel:"1310*******", standby:"159********", email:"jy@163.com", address:"保定市*************"},
-                {name: "金源纸业", tel:"1310*******", standby:"159********", email:"jy@163.com", address:"保定市*************"},
+                {name: "金源纸业", tel:"1310*******", standby:"159********", email:"jy@163.com", address:"保定市*************",  olddate:""},
+                {name: "金源纸业", tel:"1310*******", standby:"159********", email:"jy@163.com", address:"保定市*************",  olddate:""},
+                {name: "金源纸业", tel:"1310*******", standby:"159********", email:"jy@163.com", address:"保定市*************",  olddate:""},
+                {name: "金源纸业", tel:"1310*******", standby:"159********", email:"jy@163.com", address:"保定市*************",  olddate:""},
+                {name: "金源纸业", tel:"1310*******", standby:"159********", email:"jy@163.com", address:"保定市*************",  olddate:""},
+                {name: "金源纸业", tel:"1310*******", standby:"159********", email:"jy@163.com", address:"保定市*************",  olddate:""},
+                {name: "金源纸业", tel:"1310*******", standby:"159********", email:"jy@163.com", address:"保定市*************",  olddate:""},
+                {name: "金源纸业", tel:"1310*******", standby:"159********", email:"jy@163.com", address:"保定市*************",  olddate:""},
+                {name: "金源纸业", tel:"1310*******", standby:"159********", email:"jy@163.com", address:"保定市*************",  olddate:""},
+                {name: "金源纸业", tel:"1310*******", standby:"159********", email:"jy@163.com", address:"保定市*************",  olddate:""},
+                {name: "金源纸业", tel:"1310*******", standby:"159********", email:"jy@163.com", address:"保定市*************",  olddate:""},
+                {name: "金源纸业", tel:"1310*******", standby:"159********", email:"jy@163.com", address:"保定市*************",  olddate:""},
+                {name: "金源纸业", tel:"1310*******", standby:"159********", email:"jy@163.com", address:"保定市*************",  olddate:""},
+                {name: "金源纸业", tel:"1310*******", standby:"159********", email:"jy@163.com", address:"保定市*************",  olddate:""},
+                {name: "金源纸业", tel:"1310*******", standby:"159********", email:"jy@163.com", address:"保定市*************",  olddate:""},
             ],
 
             checkdata:[    // 选中数据
