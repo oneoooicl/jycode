@@ -1,7 +1,7 @@
 <template>
     <div class="customerAdd form">
         <Table border size="small" ref="selection" :columns="col" :data="dataset"></Table>
-        <Button icon="md-add" @click="addrow">添加一行数据</Button>
+        <Button type="primary" size="small" icon="md-add" @click="addrow">添加一行数据</Button>
     </div>
 </template>
 
@@ -19,7 +19,8 @@ export default {
                         return h('div', [
                             h('Icon', {
                                 props: {
-                                    type: 'md-close'
+                                    type: 'md-close',
+                                    class: 'redcolor'
                                 },
                                 style: {
                                     marginRight: '8px',
@@ -28,7 +29,7 @@ export default {
                                 },
                                 on: {
                                     click: (e) => {
-                                        this.dataset.splice(index, 1);
+                                        this.dataset.splice(params.index, 1);
                                     }
                                 }
                             }),
@@ -164,15 +165,10 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
     table .ivu-input{
         border-radius: 0px;
         border: 1px dashed #e5e5e5;
-    }
-
-    table td .ivu-icon:hover{
-        color :red;
-        box-shadow: none;
     }
 
     .add_box{
@@ -184,5 +180,8 @@ export default {
         display: flex;
         align-items: center;
         padding-left: 15px;
+    }
+    .form .ivu-btn{
+        outline:none;
     }
 </style>
